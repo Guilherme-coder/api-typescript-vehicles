@@ -1,5 +1,5 @@
 import { getRepository } from "typeorm";
-import { Category } from "../entities/Category";
+import { Category } from "../../entities/Category";
 
 type CategoryUpdateData = {
     id: number,
@@ -12,7 +12,7 @@ export class UpdateCategoryService {
         const category = await repo.findOne(id)
 
         if(!category)
-            return new Error('A categoria não existe')
+            return new Error('a categoria com o id infomado não existe')
 
         category.name = name ? name.toUpperCase() : category.name
 

@@ -1,5 +1,5 @@
 import { Response, Request } from 'express';
-import { CreateCarService } from '../services/CreateCarService';
+import { CreateCarService } from '../../services/Cars/CreateCarService';
 
 export class CreateCarController {
     async handle(request: Request, response: Response) {

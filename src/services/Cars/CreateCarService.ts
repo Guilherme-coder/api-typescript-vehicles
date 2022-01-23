@@ -1,6 +1,6 @@
 import { getRepository } from "typeorm";
-import { Cars } from "../entities/Cars";
-import { Category } from "../entities/Category";
+import { Cars } from "../../entities/Cars";
+import { Category } from "../../entities/Category";
 
 type CarData = {
     brand: string,

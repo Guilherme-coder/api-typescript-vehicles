@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DeleteCategoryService } from "../services/DeleteCategoryService";
+import { DeleteCategoryService } from "../../services/Category/DeleteCategoryService";
 
 
 export class DeleteCategoryController {
