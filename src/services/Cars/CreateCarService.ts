@@ -6,11 +6,12 @@ type CarData = {
     brand: string,
     model: string,
     price: number,
+    user_id: number,
     category_id: number
 }
 
 export class CreateCarService {
-    async execute({brand, model, price, category_id} : CarData) : Promise<Cars | Error> {
+    async execute({brand, model, price, user_id, category_id} : CarData) : Promise<Cars | Error> {
         const repoCategory = getRepository(Category)
         const repo = getRepository(Cars)
         if(!await repoCategory.findOne(category_id))
@@ -19,8 +20,9 @@ export class CreateCarService {
         const car = repo.create({
             brand: brand.toLowerCase(),
             model: model.toLowerCase(),
-            price: price,
-            category_id: category_id,
+            price,
+            user_id,
+            category_id,
             created_at: new Date()
         })
 
